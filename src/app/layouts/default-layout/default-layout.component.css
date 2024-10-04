@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+#buscador{
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+}
+
+#filtros{
+    background-color: blueviolet;
+    flex: 30%;
+    height: 100%;
+}
+
+#resultados{
+    flex: 70%;
+    height: 100%;
+}

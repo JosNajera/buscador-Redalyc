@@ -1,0 +1,22 @@
+<div *ngIf="isLoading">
+    <p>Cargando...</p>
+</div>
+
+<div *ngIf="!isLoading && posts.length === 0">
+    <p>No se encontraron resultados.</p>
+</div>
+
+<div *ngIf="!isLoading">
+    <div *ngFor="let post of posts" id="Resultados">
+        <a href="http://localhost:4200/post/{{post.id}}" target="_blank" rel="noopener noreferrer" id="titulo">
+            <h2>{{post.title.rendered}}</h2>
+        </a>
+        <p>{{ post.excerpt.rendered | stripHtml | eliminarCadena:'Continuar leyendo →'}}</p>
+    </div>
+</div>
+
+<div class="pagination">
+    <a (click)="prevPage()" id="anterior" class="paginas">Anterior </a>
+    <span> Página {{ currentPage }}</span>
+    <a (click)="nextPage()" id="siguiente" class="paginas"> Siguiente</a>
+</div>

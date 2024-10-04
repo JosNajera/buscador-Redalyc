@@ -1,0 +1,13 @@
+<div *ngIf="isLoading">
+    <p>Cargando el contenido del post...</p>
+  </div>
+  
+  <div *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+  
+  <div *ngIf="!isLoading && !error && postData" id="datos">
+    <h1 [innerHTML]="postData.title.rendered"></h1>
+    <div [innerHTML]="postData.content.rendered"></div>
+  </div>
+  
